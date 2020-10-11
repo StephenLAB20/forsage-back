@@ -10,14 +10,16 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Transient
-    private User leftUser;
-
-    @Transient
-    private User rightUser;
-
     @Column(name = "fullname")
     private String fullName;
+
+    @Transient
+    public User leftUser;
+
+    @Transient
+    public User rightUser;
+
+
 
     @Column(name = "forsage_id")
     private int forsageID;
@@ -50,8 +52,9 @@ public class User {
 
     public User(){}
 
-    public User(int value){
+    public User(int value, String fullName){
         this.value = value;
+        this.fullName = fullName;
         this.leftUser = null;
         this.rightUser = null;
     }
@@ -175,8 +178,8 @@ public class User {
                 ", currentSlotX3=" + currentSlotX3 +
                 ", currentSlotX4=" + currentSlotX4 +
                 ", value=" + value +
-                ", leftUser=" + leftChild +
-                ", rightUser=" + rightChild +
+                ", leftUser=" + leftUser +
+                ", rightUser=" + rightUser +
                 ", phone=" + phone +
                 '}';
     }
