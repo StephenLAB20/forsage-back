@@ -21,6 +21,10 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    public User getUserByForsageId(int forsageID){
+      return userService.getUserByForsageID(forsageID);
+    }
+
     @ResponseBody
     @RequestMapping(method = RequestMethod.GET, path = "/")
     public String testConnect(){
@@ -41,23 +45,23 @@ public class UserController {
      * @return user by value in tree
      *
      */
-    @ResponseBody
+   /* @ResponseBody
     @RequestMapping(method = RequestMethod.GET, path = "/user/{value}")
     public User retrieveUserByValue(@PathVariable int value) {
         return userService.getUserByValue(value);
     }
 
 
-    /**
+    *//**
      * @return user by value in tree
      *
-     */
+     *//*
     @ResponseBody
     @RequestMapping(method = RequestMethod.GET, path = "/user/{id}")
     public User retrieveUserUserById(@PathVariable int id) {
         return userService.getUserByValue(id);
     }
-
+*/
     /**
      * Adds user with value and forsageID to DB
      * @return response status
