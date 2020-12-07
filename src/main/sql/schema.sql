@@ -1,4 +1,4 @@
--- CREATE TABLE public.users
+/* CREATE TABLE public.users
 CREATE TABLE users (
                        id serial NOT NULL,
                        fullname character varying(1000),
@@ -11,4 +11,4 @@ CREATE TABLE users (
                        right_user character varying(3000),
                        phone character varying(100),
                        PRIMARY KEY (id)
-)
+)*/

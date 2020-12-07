@@ -21,15 +21,6 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    public User getUserByForsageId(int forsageID){
-      return userService.getUserByForsageID(forsageID);
-    }
-
-    @ResponseBody
-    @RequestMapping(method = RequestMethod.GET, path = "/")
-    public String testConnect(){
-        return "Pyramid";
-    }
 
 
     /**
@@ -41,27 +32,7 @@ public class UserController {
         return userService.getAllUsers();
     }
 
-    /**
-     * @return user by value in tree
-     *
-     */
-   /* @ResponseBody
-    @RequestMapping(method = RequestMethod.GET, path = "/user/{value}")
-    public User retrieveUserByValue(@PathVariable int value) {
-        return userService.getUserByValue(value);
-    }
 
-
-    *//**
-     * @return user by value in tree
-     *
-     *//*
-    @ResponseBody
-    @RequestMapping(method = RequestMethod.GET, path = "/user/{id}")
-    public User retrieveUserUserById(@PathVariable int id) {
-        return userService.getUserByValue(id);
-    }
-*/
     /**
      * Adds user with value and forsageID to DB
      * @return response status
@@ -85,7 +56,7 @@ public class UserController {
 
         //TODO decide how to update the user
         User user = userService.getUserById(id);
-        // user.set( user ??????? )
+
         userService.save(user);
         return ResponseEntity.ok().build();
 

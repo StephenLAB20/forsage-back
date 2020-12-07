@@ -21,18 +21,8 @@ public class UserService {
        return userDAO.findById(id).get();
    }
 
- /*  public User getUserByValue(int value){
-       return userDAO.findByValue(value);
-   }*/
-
    public List<User> getAllUsers(){
        return (List<User>) userDAO.findAll();
    }
-
-
-   public User getUserByForsageID(int forsage){
-       return userDAO.findByForsage(forsage);
-   }
-
 
 }

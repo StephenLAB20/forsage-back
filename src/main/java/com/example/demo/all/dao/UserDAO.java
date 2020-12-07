@@ -8,9 +8,6 @@ import org.springframework.stereotype.Repository;
 public interface UserDAO extends CrudRepository<User, Integer> {
 
 
-    //User findByValue(int value);
-
-    User findByForsage(int value);
 
 }
 
